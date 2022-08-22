@@ -40,6 +40,8 @@ while once:
         test_site = requests.get('https://tests.stockfishchess.org/api/active_runs')
         tests = json.loads(test_site.text)
         for key in tests.keys():
+            if not 'result_info' in test:
+                continue
             test_id = str(key)
             test = tests[key]
             llr = 0
