@@ -1,11 +1,11 @@
 ## Overview
 
 This is a small site which tracks patches on fishtest and allows to display
-curves of lost/won games to visualize how a 
+curves of lost/won games to visualize how a patch progresses through fishtest.
 
 ## Files
 
-This distribution of Stockfish consists of the following files:
+This project consists of the following files:
 
   * [README.md],
     the file you are currently reading.
