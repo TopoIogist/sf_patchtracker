@@ -42,8 +42,6 @@ while once:
         for key in tests.keys():
             test_id = str(key)
             test = tests[key]
-            if not 'result_info' in test:
-                continue
             llr = 0
             wins = 0
             losses = 0
