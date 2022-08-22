@@ -5,7 +5,7 @@ curves of lost/won games to visualize how a
 
 ## Files
 
-This distribution of Stockfish consists of the following files:
+This project consists of the following files:
 
   * [README.md],
     the file you are currently reading.
