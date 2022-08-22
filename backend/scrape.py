@@ -71,7 +71,7 @@ while once:
                 test_user = test['args']['username']
                 test_branch = test['args']['new_tag']
                 test_diff = ''
-                test_elo_text = str(test['results_info']['info'])
+                test_elo_text = ''
                 test_type_text = test['args']['tc']
                 test_descr = test['args']['msg_base']
                 test_type = 0
@@ -89,7 +89,7 @@ while once:
                     alpha = test['args']['sprt']['alpha']
                     beta = test['args']['sprt']['beta']
                 sql_str = "INSERT INTO `test_unique` (`test_id`, `submit_date`, `test_start_date`, `test_user`, `test_branch`, `test_diff`, `test_elo_text`, `test_type_text`, `test_descr_test`, `llr`, `total`, `wins`, `losses`, `draws`, `elo`, `test_type`, `elo0`, `elo1`, `alpha`, `beta`, `result`, `test_site`) VALUES ('"+escape(test_id)+"', current_timestamp(), '"+escape(test_start_date)+"', '"+escape(test_user)+"', '"+escape(test_branch)+"', '"+escape(test_diff)+"', '"+escape(test_elo_text)+"', '"+escape(test_type_text)+"', '"+escape(test_descr)+"', '"+escape(str(llr))+"', '"+escape(str(total))+"', '"+escape(str(wins)) \
-                             +"', '"+escape(str(losses))+"', '"+escape(str(draws))+"', '"+escape(str(elo))+"', '"+escape(str(test_type))+"', '"+escape(str(elo0))+"', '"+escape(str(elo1))+"', '"+escape(str(alpha))+"', '"+escape(str(beta))+"', '"+escape(str(test_result))+"', '"+escape(str(obj_tab))+"')"
+                             +"', '"+escape(str(losses))+"', '"+escape(str(draws))+"', '"+escape(str(elo))+"', '"+escape(str(test_type))+"', '"+escape(str(elo0))+"', '"+escape(str(elo1))+"', '"+escape(str(alpha))+"', '"+escape(str(beta))+"', '"+escape(str(test_result))+"', '"+escape(str(''))+"')"
                 mycursor = mydb.cursor()
                 mycursor.execute(sql_str)
                 mydb.commit()
