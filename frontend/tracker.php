@@ -59,7 +59,7 @@ $conn->close();
         <div class="row">
             <div class="col-12 mb-3 text-center">
                 <a href="./index.php" class="display-4">Tracked Patches</a>
-                <h4>Statistics for patch <a href="https://tests.stockfishchess.org/tests/view/<?= $testid ?>" target="_blank" rel="noopener"><?= $branch ?></a> by <?= $user ?></a></h4>
+                <h4>Statistics for patch <a href="https://tests.stockfishchess.org/tests/view/<?= $testid ?>" target="_blank" rel="noopener"><?= $branch ?></a> by <?= $user ?></h4>
             </div>
             <div class="col-12 mb-3">
                 <form v-on:submit.prevent="getData">

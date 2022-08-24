@@ -56,7 +56,7 @@ $result = $conn->query($sql);
                                     <td><?= $row["test_id"] ?></td>
                                     <td><?= $row["test_user"] ?></td>
                                     <td>
-                                        <a href="./tracker.php?test_id=<?= $row['test_id'] ?>"><?= $row["test_branch"] ?>
+                                        <a href="./tracker.php?test_id=<?= $row['test_id'] ?>"><?= $row["test_branch"] ?></a>
                                     </td>
                                     <td><?= ($row["test_type"] === "1") ? round($row["llr"], 2) : "" ?></td>
                                 </tr>
