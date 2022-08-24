@@ -2,30 +2,35 @@ import requests
 import time
 import math
 import re
-import sys, traceback
+import sys
+import traceback
 import mysql.connector
 from sqlescapy import sqlescape
 
 mydb = mysql.connector.connect(
-  host="localhost",
-  user="stockfish",
-  password="REMOVED",
-  db="stockfish"
+    host = "localhost",
+    user = "stockfish",
+    password = "REMOVED",
+    db = "stockfish"
 )
+
 
 def escape(x):
     return sqlescape(str(x))
 
+
 def exists(testid):
     global mydb
     mycursor = mydb.cursor()
-    mycursor.execute("SELECT * FROM `test_unique` WHERE `test_id` = '"+escape(testid)+"' LIMIT 0, 1")
+    mycursor.execute(
+        "SELECT * FROM `test_unique` WHERE `test_id` = '"+escape(testid)+"' LIMIT 0, 1")
     myresult = mycursor.fetchall()
     return len(myresult) > 0
 
 
 mycursor = mydb.cursor()
-mycursor.execute("SELECT * FROM `tests` WHERE submit_date <= DATE_SUB(NOW(), INTERVAL 1 MINUTE) ORDER BY submit_id DESC LIMIT 50000")
+mycursor.execute(
+    "SELECT * FROM `tests` WHERE submit_date <= DATE_SUB(NOW(), INTERVAL 1 MINUTE) ORDER BY submit_id DESC LIMIT 50000")
 recent_tests = mycursor.fetchall()
 
 test_counts = {}
